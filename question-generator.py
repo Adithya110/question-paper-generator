@@ -5,13 +5,14 @@ import numpy as np
 import streamlit as st
 from huggingface_hub import InferenceClient
 from sentence_transformers import SentenceTransformer
+import os
 
 # ------------------- Page Setup -------------------
 st.set_page_config(page_title="AI Exam Generator", page_icon="📝", layout="wide")
 st.title("📝 AI Exam Paper Generator")
 st.write("Upload syllabus → Analyze patterns → Generate exam paper")
 
-# Set your hf token here 
+hf_token = os.getenv("HF_TOKEN") 
 
 # ------------------- Sidebar -------------------
 with st.sidebar:
